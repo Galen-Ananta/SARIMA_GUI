@@ -38,6 +38,7 @@ sesi = st.sidebar.radio("Navigasi Sesi", [
     "Sesi 6: Forecast & Export"
 ])
 
+@st.cache_data
 # ===== Sesi 1 =====
 if sesi == "Sesi 1: Upload & Setup Waktu":
     st.title(":bar_chart: SARIMA GUI - Sesi 1: Upload & Setup Waktu")
@@ -93,6 +94,7 @@ if sesi == "Sesi 1: Upload & Setup Waktu":
         except Exception as e:
             st.error(f"❌ Gagal membuat index waktu: {e}")
 
+@st.cache_data
 # ===== Sesi 2 =====
 elif sesi == "Sesi 2: Eksplorasi Data":
     st.title(":bar_chart: SARIMA GUI - Sesi 2: Eksplorasi Data")
@@ -114,6 +116,7 @@ elif sesi == "Sesi 2: Eksplorasi Data":
     stats.probplot(ts, dist="norm", plot=ax)
     st.pyplot(fig2)
 
+@st.cache_data
 # ===== Sesi 3 =====
 elif sesi == "Sesi 3: Identifikasi Model":
     st.title(":mag: SARIMA GUI - Sesi 3: Identifikasi Model")
@@ -190,7 +193,7 @@ elif sesi == "Sesi 3: Identifikasi Model":
 
     st.session_state.ts_diff = ts_diff
 
-
+@st.cache_data
 # ===== Sesi 4 =====
 elif sesi == "Sesi 4: Pemodelan":
     st.title(":wrench: SARIMA GUI - Sesi 4: Pemodelan")
@@ -250,6 +253,7 @@ elif sesi == "Sesi 4: Pemodelan":
     except:
         st.text(model.summary())
 
+@st.cache_data
 # ===== Sesi 5 =====
 elif sesi == "Sesi 5: Evaluasi & Uji Diagnostik":
     st.title(":bar_chart: SARIMA GUI - Sesi 5: Evaluasi & Uji Diagnostik")
@@ -324,6 +328,7 @@ elif sesi == "Sesi 5: Evaluasi & Uji Diagnostik":
     st.markdown("- H1: Residual tidak terdistribusi normal")
     st.markdown("**Syarat:** Tolak H0 jika p-value < 0.05")
 
+@st.cache_data
 # ===== Sesi 6 =====
 elif sesi == "Sesi 6: Forecast & Export":
     st.title(":crystal_ball: SARIMA GUI - Sesi 6: Forecast & Export")
