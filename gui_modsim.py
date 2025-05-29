@@ -124,7 +124,7 @@ elif sesi == "Sesi 3: Identifikasi Model":
 
     ts = st.session_state.ts
 
-    lag_slider = st.slider("Jumlah lag untuk ACF dan PACF", min_value=5, max_value=100, value=40, step=1)
+    lag_slider = st.slider("Jumlah lag untuk ACF dan PACF", min_value=5, max_value=30, value=20, step=1)
 
     col1, col2 = st.columns(2)
 
