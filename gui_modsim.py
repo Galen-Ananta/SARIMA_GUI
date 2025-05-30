@@ -190,7 +190,7 @@ elif sesi == "Sesi 3: Identifikasi Model":
     st.subheader("⚙️ Differencing")
     d = st.number_input("Orde differencing (d)", 0, 5, 1)
     D = st.number_input("Musiman (D)", 0, 5, 0)
-    s = st.number_input("Periode Musiman (s)", 1, 24, 12)
+    s = st.number_input("Periode Musiman (s)", 0, 24, 12)
 
     ts_diff = ts.diff(d).dropna()
     if D > 0:
